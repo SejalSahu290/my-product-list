@@ -16,10 +16,7 @@ const PostProducts = (data) => {
     return apiClient.post('/products', data);
   };
 
-// const EditProducts  = async(data) => {
-//     const response = await apiClient.patch("/products", data);
-//     return response;
-// }
+
 const EditProducts = async (data) => {
     const response = await apiClient.patch(`/products/${data.id}`, data);
     return response;
