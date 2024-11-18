@@ -1,26 +1,26 @@
 import { API_BASE_URL } from "./apiEndPoint";
-import axios from 'axios'
+import axios from 'axios';
 
-const apiClient =  axios.create({
+const apiClient = axios.create({
     baseURL: API_BASE_URL,
-    headers:{
-        'Content-Type':'application/json',
+    headers: {
+        'Content-Type': 'application/json',
     },
     withCredentials: true
 });
 
 apiClient.interceptors.request.use(
-    function (config){
+    function (config) {
         const token = localStorage.getItem('productlistToken');
-        if(token){
+        if (token) {
             config.headers.Authorization = `Bearer ${token}`;
         }
-
         return config;
     },
-    function(error){
+    function (error) {
         return Promise.reject(error);
     }
 );
 
 export default apiClient;
+

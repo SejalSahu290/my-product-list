@@ -17,7 +17,7 @@
 // }
 
 
-import apiClient from "./apiServices"; 
+import apiClient from "./apiService"; 
 // import apiClient from '@/services/apiServices';
 
 const SignIn = async (data) => {
